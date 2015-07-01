@@ -1,0 +1,50 @@
+;; -*- emacs-lisp -*- <15/07/01 17:52:33 /Users/1q84/.emacs.d/tramp>
+;; Tramp connection history.  Don't change this file.
+;; You can delete it, forcing Tramp to reapply the checks.
+
+((["ssh" "mohaike" "172.16.100.157" nil nil]
+  ("uname" "Linux 3.13.0-53-generic")
+  ("test" "test")
+  ("remote-path"
+   ("/bin" "/usr/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
+  ("remote-shell" "/bin/sh")
+  ("locale" "LC_ALL=en_US.utf8")
+  ("ls" "/bin/ls --color=never")
+  ("ls-dired" t)
+  ("stat" nil)
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")
+  ("id" "/usr/bin/id")
+  ("gid-integer" 1000)
+  ("gid-string" "mohaike")
+  ("trash" nil)
+  ("file-exists" "test -e")
+  ("readlink" "\\readlink")
+  ("tmpdir" "/ssh:mohaike@172.16.100.157:/tmp")
+  ("touch-t" t)
+  ("touch" "\\touch")
+  ("gvfs-monitor-dir" "/usr/bin/gvfs-monitor-dir")
+  ("uid-integer" 1000)
+  ("~" "/home/mohaike"))
+ (["sudo" "root" "1Q84deiMac.local" nil nil]
+  ("uname" "Darwin 14.4.0")
+  ("test" "test")
+  ("remote-path"
+   ("/usr/bin" "/bin" "/usr/sbin" "/sbin" "/usr/local/bin" "/opt/local/bin"))
+  ("remote-shell" "/bin/sh")
+  ("locale" "LC_ALL=C")
+  ("ls" "/bin/ls")
+  ("ls-dired" nil)
+  ("stat" nil)
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl5")
+  ("id" "/usr/bin/id")
+  ("gid-integer" 0)
+  ("gid-string" "wheel")
+  ("file-exists" "test -e")
+  ("~root" "/var/root")
+  ("readlink" nil))
+ (["scp" nil "sudo" nil nil]
+  nil))

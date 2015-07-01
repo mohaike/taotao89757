@@ -1,0 +1,1 @@
+(provide 'taotao-mini-init)
