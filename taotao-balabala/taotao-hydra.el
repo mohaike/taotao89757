@@ -57,7 +57,17 @@
   ("j" next-line)
   ("k" previous-line)
 
-  ("i" ido-mode)
-  ("f" ido-find-file)
+  ("/" undo)
+
+  ("," previous-multiframe-window)
+  ("." next-multiframe-window)
+  ("0" winner-redo)
+  ("9" winner-undo)
+
+  ("x" kill-this-buffer)
+  ("u" revert-buffer)
+
+  ("w" taotao-window)
+  ("g" taotao-gs-window)
   ("q" nil "quit")))
 (provide 'taotao-hydra)
