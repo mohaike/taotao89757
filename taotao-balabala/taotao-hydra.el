@@ -74,7 +74,9 @@
   ("e" xah-open-in-external-app)
   ("o" reveal-in-finder)
   ("cfp" xah-copy-file-path)
+  ("cbn" taotao-copy-buffer-name-to-clipboard)
   ("co" clone-and-open-file)
+  ("ff" find-name-dired)                ;find file in dired
 
   ("q" nil "quit")))
 (provide 'taotao-hydra)

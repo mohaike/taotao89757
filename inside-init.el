@@ -910,6 +910,26 @@ URL `http://ergoemacs.org/emacs/emacs_copy_file_path.html'"
     (message "File path copied: 「%s」" fPath)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; 拷贝当前buffer的名字，下面的函数是根据它写的
+;; (defun copy-file-name-to-clipboard ()
+;;   "Copy the current buffer file name to the clipboard."
+;;   (interactive)
+;;   (let ((filename (if (equal major-mode 'dired-mode)
+;;                       default-directory
+;;                     (buffer-file-name))))
+;;     (when filename
+;;       (kill-new filename)
+;;       (message "Copied buffer file name '%s' to the clipboard." filename))))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defun taotao-copy-buffer-name-to-clipboard ()
+  "Copy the current buffer file name to the clipboard."
+  (interactive)
+  (let ((buffername (buffer-name)))
+    (when buffername
+      (kill-new buffername)
+      (message "Copied buffer name '%s' to the clipboard." buffername))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; save current file as another and keep it open
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defun clone-and-open-file (filename)
