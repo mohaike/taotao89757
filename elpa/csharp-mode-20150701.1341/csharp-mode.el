@@ -7,7 +7,7 @@
 ;; Modified   : May 2015
 ;; Version    : 0.8.10
 ;; Keywords   : c# languages oop mode
-;; Package-Version: 20150609.1206
+;; Package-Version: 20150701.1341
 ;; X-URL      : https://github.com/josteink/csharp-mode
 ;; Last-saved : <2014-Nov-29 13:56:00>
 

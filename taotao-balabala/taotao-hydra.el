@@ -69,5 +69,12 @@
 
   ("w" taotao-window)
   ("g" taotao-gs-window)
+  ("m" mark-sexp)
+  ("v" set-mark-command)
+  ("e" xah-open-in-external-app)
+  ("o" reveal-in-finder)
+  ("cfp" xah-copy-file-path)
+  ("co" clone-and-open-file)
+
   ("q" nil "quit")))
 (provide 'taotao-hydra)

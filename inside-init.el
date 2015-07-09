@@ -856,6 +856,9 @@ This is particularly useful under Mac OSX, where GUI apps are not started from a
   (message tmp)
   )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; window分割策略
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defun taotao-window ()
   (interactive)
   (delete-other-windows)
@@ -877,7 +880,44 @@ This is particularly useful under Mac OSX, where GUI apps are not started from a
 
 (defun taotao-gs-window ()
   (interactive)
+  (dired "~/Documents/GS/mysingingmonsters_client")
+  (shell)
+  (dired "~/Documents/GS/mysingingmonsters_client")
+  (kill-buffer)
+  (switch-to-buffer "*scratch*")
+
   (taotao-window)
   (dired "~/Documents/GS/mysingingmonsters_client/MSMYodo2/")
   )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; copy file path
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defun xah-copy-file-path (&optional φdir-path-only-p)
+  "Copy the current buffer's file path or dired path to `kill-ring'.
+If `universal-argument' is called, copy only the dir path.
+Version 2015-01-14
+URL `http://ergoemacs.org/emacs/emacs_copy_file_path.html'"
+  (interactive "P")
+  (let ((fPath
+         (if (equal major-mode 'dired-mode)
+             default-directory
+           (buffer-file-name))))
+    (kill-new
+     (if (equal φdir-path-only-p nil)
+         fPath
+       (file-name-directory fPath)))
+    (message "File path copied: 「%s」" fPath)))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; save current file as another and keep it open
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defun clone-and-open-file (filename)
+  "Clone the current buffer writing it into FILENAME and open it"
+  (interactive "FClone to file: ")
+  (save-restriction
+    (widen)
+    (write-region (point-min) (point-max) filename nil nil nil 'confirm))
+  (find-file filename))
+
 (provide 'inside-init)
